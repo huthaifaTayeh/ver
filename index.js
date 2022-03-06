@@ -43,6 +43,7 @@ async function postData(data) {
 
 async function submitHandler(e) {
 	e.preventDefault();
+	document.getElementById("submit-btn").setAttribute("disabled", true);
 	// fetch(
 	// 	"https://form-submit.clickup.com/v1/form/4gn8j-7861/submit?token=XPLAWYH6BYJMICSHXI&ngsw-bypass=true",
 	// 	{ method: "POST" }
@@ -71,6 +72,17 @@ async function submitHandler(e) {
 		console.log(error);
 	}
 }
+
+const phoneInputField = document.getElementById("contact-number");
+phoneInputField.addEventListener("input", (e) => {
+	e.preventDefault();
+	console.log(typeof e.target.value);
+
+	phoneInputField.value = e.target.value.replace(
+		/(\d{3})(\d{3})(\d{3})(\d{4})/,
+		"$1 $2 $3 $4"
+	);
+});
 
 const storeForm = document.getElementById("store-form");
 storeForm.addEventListener("submit", (e) => submitHandler(e));

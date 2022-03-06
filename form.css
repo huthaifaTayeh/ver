@@ -80,3 +80,16 @@ body {
 	align-self: center;
 	border: none;
 }
+
+#contact-number {
+	text-align: end;
+}
+
+#contact-number::placeholder {
+	text-align: end;
+	word-spacing: 3px;
+	letter-spacing: 2px;
+}
+#contact-number:-ms-input-placeholder {
+	text-align: end;
+}

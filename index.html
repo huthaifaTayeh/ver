@@ -51,8 +51,9 @@
 							type="tel"
 							id="contact-number"
 							name="contact-number"
-							pattern="[+]{1}[0-9]{11,14}"
+							pattern="[+]{1}[0-9]{3}\s[0-9]{3}\s[0-9]{3}\s[0-9]{4}"
 							placeholder="+218 9** *** ****"
+							dir="ltr"
 							required
 						/><br />
 
@@ -62,7 +63,7 @@
 						<label for="other-info">معلومات أخرى</label><br />
 						<input type="text" id="other-info" name="other-info" /><br />
 						<div class="form-button-container">
-							<button type="submit">Submit</button>
+							<button type="submit" id="submit-btn">إرسال</button>
 						</div>
 					</form>
 				</div>

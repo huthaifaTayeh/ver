@@ -1,0 +1,81 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.general-layout {
+	margin: 5px;
+	border-radius: 5px;
+	max-width: calc(100vw - 10px);
+	min-height: calc(100vh - 10px);
+	min-width: calc(100vw - 30px);
+	box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.42);
+	-webkit-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.42);
+	-moz-box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.42);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.main-container {
+	width: 70vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 28px 2px rgba(0, 0, 0, 0.3);
+	padding: 30px 0;
+}
+
+.main-container img:first-child {
+	border-radius: 50%;
+}
+#about-image {
+	width: 65vw;
+}
+
+.form-container {
+	margin-top: 50px;
+	width: 60vw;
+}
+
+.form-button-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.form-button-container button {
+	border-radius: 25px;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.form-container form label {
+	font-weight: 550;
+}
+.form-container form input {
+	margin-bottom: 20px;
+	margin-top: 15px;
+	width: 100%;
+	padding: 5px 15px;
+	height: 40px;
+	border: none;
+	box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+}
+
+.form-container button {
+	color: aliceblue;
+	background-color: #057b6b;
+	width: 40vw;
+	padding: 15px 0;
+	align-self: center;
+	border: none;
+}

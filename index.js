@@ -79,7 +79,7 @@ phoneInputField.addEventListener("input", (e) => {
 	console.log(typeof e.target.value);
 
 	phoneInputField.value = e.target.value.replace(
-		/(\d{3})(\d{3})(\d{3})(\d{4})/,
+		/(\d{3})(\d{3})(\d{3})(\d{3})/,
 		"$1 $2 $3 $4"
 	);
 });

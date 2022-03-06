@@ -18,7 +18,7 @@ body {
 }
 
 .main-container {
-	width: 70vw;
+	width: 85vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -34,12 +34,12 @@ body {
 	border-radius: 50%;
 }
 #about-image {
-	width: 65vw;
+	width: 75vw;
 }
 
 .form-container {
 	margin-top: 50px;
-	width: 60vw;
+	width: 75vw;
 }
 
 .form-button-container {
@@ -74,7 +74,7 @@ body {
 .form-container button {
 	color: aliceblue;
 	background-color: #057b6b;
-	width: 40vw;
+	width: 60vw;
 	padding: 15px 0;
 	align-self: center;
 	border: none;

@@ -45,6 +45,7 @@ body {
 .form-button-container {
 	width: 100%;
 	display: flex;
+	padding-top: 2vh;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;

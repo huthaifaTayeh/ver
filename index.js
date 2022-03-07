@@ -1,3 +1,4 @@
+import { countries } from "./countries.js";
 async function postData(data) {
 	const response = await fetch("https://api.vetrinas.ly/form", {
 		method: "POST",
@@ -79,10 +80,22 @@ phoneInputField.addEventListener("input", (e) => {
 	console.log(typeof e.target.value);
 
 	phoneInputField.value = e.target.value.replace(
-		/(\d{3})(\d{3})(\d{3})(\d{3})/,
-		"$1 $2 $3 $4"
+		/(\d{3})(\d{3})(\d{3})/,
+		"$1 $2 $3"
 	);
 });
 
+console.log(countries.length);
+let langSpan = document.getElementById("countries-container");
+countries.map((country) => {
+	let countryOption = document.createElement("option");
+	countryOption.setAttribute("value", country.code);
+	countryOption.setAttribute("id", country.name + "-option");
+	countryOption.innerHTML = country.name + ` (${country.code})`;
+	if (country.name.toLowerCase() === "libya") {
+		countryOption.setAttribute("selected", true);
+	}
+	langSpan.appendChild(countryOption);
+});
 const storeForm = document.getElementById("store-form");
 storeForm.addEventListener("submit", (e) => submitHandler(e));

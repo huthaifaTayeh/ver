@@ -4,6 +4,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="form.css" />
+		<link rel="import" href="./countris.html" />
+		<script type="module" src="./countries.js"></script>
 		<!-- <script src="form.js"></script> -->
 		<title>Form</title>
 	</head>
@@ -51,11 +53,14 @@
 							type="tel"
 							id="contact-number"
 							name="contact-number"
-							pattern="[+]{1}[0-9]{3}\s[0-9]{3}\s[0-9]{3}\s[0-9]{3}"
-							placeholder="+218 9** *** ****"
+							pattern="[0-9]{3}\s[0-9]{3}\s[0-9]{3}"
+							placeholder="*** *** ***"
 							dir="ltr"
 							required
-						/><br />
+						/><span include-html="countris.html">
+							<select id="countries-container"></select>
+						</span>
+						<br />
 
 						<label for="Email">بريد الكتروني</label><br />
 						<input type="text" id="Email" name="Email" /><br />
@@ -70,5 +75,5 @@
 			</div>
 		</div>
 	</body>
-	<script src="index.js"></script>
+	<script type="module" src="index.js"></script>
 </html>

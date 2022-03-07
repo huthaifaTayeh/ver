@@ -1,4 +1,5 @@
 import { countries } from "./countries.js";
+
 async function postData(data) {
 	const response = await fetch("https://api.vetrinas.ly/form", {
 		method: "POST",
@@ -44,28 +45,39 @@ async function postData(data) {
 
 async function submitHandler(e) {
 	e.preventDefault();
+
 	document.getElementById("submit-btn").setAttribute("disabled", true);
-	// fetch(
-	// 	"https://form-submit.clickup.com/v1/form/4gn8j-7861/submit?token=XPLAWYH6BYJMICSHXI&ngsw-bypass=true",
-	// 	{ method: "POST" }
-	// );
+
 	let storeName = document.getElementById("store-name").value;
+
 	let storeDiscription = document.getElementById("store-description").value;
+
 	let storeLink = document.getElementById("store-link").value;
+
 	let contactNumber = document.getElementById("contact-number").value;
+
 	let email = document.getElementById("Email").value;
+
 	let otherInfo = document.getElementById("other-info").value;
-	console.log(storeName.value);
+
+	let selectedCountry = document.getElementById("countries-container");
+
+	let countryKey = selectedCountry.options[selectedCountry.selectedIndex].value;
+
 	const body = {
 		name: storeName,
 		content: storeDiscription,
 		customFields: [
 			{ id: "e7caba05-d6b6-4746-8cda-df864b54be1a", value: storeLink },
-			{ id: "ec5e777f-0e0e-42ba-b184-1bf65779a771", value: contactNumber },
+			{
+				id: "ec5e777f-0e0e-42ba-b184-1bf65779a771",
+				value: countryKey + " " + contactNumber,
+			},
 			{ id: "f86e4bd4-7f64-427a-8c5b-867f56a9936f", value: email },
 			{ id: "f251953e-f92b-413f-859f-25df4b753d6a", value: otherInfo },
 		],
 	};
+
 	try {
 		const response = await postData(body);
 		alert("horray");
@@ -75,9 +87,9 @@ async function submitHandler(e) {
 }
 
 const phoneInputField = document.getElementById("contact-number");
+
 phoneInputField.addEventListener("input", (e) => {
 	e.preventDefault();
-	console.log(typeof e.target.value);
 
 	phoneInputField.value = e.target.value.replace(
 		/(\d{3})(\d{3})(\d{3})/,
@@ -85,17 +97,23 @@ phoneInputField.addEventListener("input", (e) => {
 	);
 });
 
-console.log(countries.length);
 let langSpan = document.getElementById("countries-container");
+
 countries.map((country) => {
 	let countryOption = document.createElement("option");
+
 	countryOption.setAttribute("value", country.code);
+
 	countryOption.setAttribute("id", country.name + "-option");
+
 	countryOption.innerHTML = country.name + ` (${country.code})`;
+
 	if (country.name.toLowerCase() === "libya") {
 		countryOption.setAttribute("selected", true);
 	}
 	langSpan.appendChild(countryOption);
 });
+
 const storeForm = document.getElementById("store-form");
+
 storeForm.addEventListener("submit", (e) => submitHandler(e));
